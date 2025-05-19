@@ -3,200 +3,152 @@
 <head>
     <meta charset="UTF-8" />
     <title>Factura</title>
-    <link rel="stylesheet" href="estilos.css" />
-    <style>
-        /* Estilos para centrar y mejorar la presentación */
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+        <style>
+        /* Puedes agregar ajustes específicos si lo deseas */
         body {
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            background-color: #f0f0f0;
+            background-color: #e3fafa;
         }
-
-        .factura-container {
-            width: 80%;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        /* Estilo para la cabecera de la factura */
-        .factura-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
+        /* Ajustes para las imágenes */
         .logo {
             max-width: 150px;
             height: auto;
         }
-
-        .factura-info {
-            text-align: right;
-        }
-
-        /* Estilos para las tablas */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            vertical-align: top;
-        }
-
-        .text-right {
-            text-align: right;
-        }
-
-        /* Estilo para la tabla combinada de empresa y cliente */
-        .tabla-empresa-cliente {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        .tabla-empresa-cliente td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            vertical-align: top;
-        }
-
-        /* Estilo para los totales */
-        tfoot td {
-            font-weight: bold;
+        .producto-img {
+            max-width: 50px;
+            height: auto;
         }
     </style>
 </head>
 <body>
-<div class="factura-container">
-    <!-- Encabezado con logotipo y datos de factura -->
-    <div class="factura-header">
-        <!-- Logotipo de la empresa -->
-        <div>
-            <img src="C:\Users\ASUSPC\Documents\APLICACIONES WEB\Creación de una Factura\imagenes\logotipo.jpg" alt="Logotipo Empresa XYZ" class="logo" />
-        </div>
-        <!-- Datos de la factura -->
-        <div class="factura-info">
-            <h2>Factura N° 001-000123</h2>
-            <p><strong>Fecha de emisión:</strong> 27/10/2023</p>
+<div class="container my-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <!-- Encabezado con logotipo y datos de factura -->
+            <div class="row align-items-center mb-4">
+                <div class="col-md-4">
+                    <img src="imagenes/logotipo.jpg" alt="Logotipo Empresa dagaoffice" class="logo img-fluid" />
+                </div>
+                <div class="col-md-8 text-md-end">
+                    <h2 class="fw-bold">Factura N° 001-000123</h2>
+                    <p><strong>Fecha de emisión:</strong> 27/04/2025</p>
+                </div>
+            </div>
+
+            <!-- Datos combinados de empresa y cliente -->
+            <section class="mb-4">
+                <h4 class="bg-dark  text-white p-2 rounded">Datos de la Empresa y Cliente</h4>
+                <div class="row gy-3">
+                    <div class="col-md-6">
+                        <div class="border p-3 rounded bg-light">
+                            <h5>Datos de la Empresa</h5>
+                            <p class="mb-0">
+                                <strong>Nombre:</strong> Empresa DADA OFFICE<br />
+                                <strong>Dirección:</strong> Calle Principal 123, Ciudad<br />
+                                <strong>RUC:</strong> 1234567890<br />
+                                <strong>Contacto:</strong> +593 987654321
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border p-3 rounded bg-light">
+                            <h5>Datos del Cliente</h5>
+                            <p class="mb-0">
+                                <strong>Nombre:</strong> Juan Pérez<br />
+                                <strong>Cédula/RUC:</strong> 0987654321<br />
+                                <strong>Dirección:</strong> Av. Secundaria 456, Ciudad<br />
+                                <strong>Contacto:</strong> +593 912345678
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Listado de productos -->
+            <section class="mb-4">
+                <h4 class="bg-dark  text-white p-2 rounded">Listado de Productos</h4>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped align-middle mb-0">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Código</th>
+                                <th>Imagen</th>
+                                <th>Descripción</th>
+                                <th>Cantidad</th>
+                                <th>Precio Unitario</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td><img src="imagenes/archivadormetalico.webp" alt="Producto A" class="producto-img" /></td>
+                                <td>Archivador Metalico</td>
+                                <td class="text-center">2</td>
+                                <td class="text-end">50.00</td>
+                                <td class="text-end">100.00</td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td><img src="imagenes/sumadoraelectrica.jpg" alt="Producto B" class="producto-img" /></td>
+                                <td>Sumadora Electrica</td>
+                                <td class="text-center">1</td>
+                                <td class="text-end">80.00</td>
+                                <td class="text-end">80.00</td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td><img src="imagenes/organizadordeescritorio.webp" alt="Producto C" class="producto-img" /></td>
+                                <td>Organizador De Escritorio</td>
+                                <td class="text-center">3</td>
+                                <td class="text-end">30.00</td>
+                                <td class="text-end">90.00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5" class="text-end fw-bold">Subtotal:</td>
+                                <td class="text-end fw-bold">270.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-end fw-bold">IVA (15%):</td>
+                                <td class="text-end fw-bold">40.50</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-end fw-bold">Descuento (10%):</td>
+                                <td class="text-end fw-bold">-27.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-end fw-bold">Total:</td>
+                                <td class="text-end fw-bold">279.45</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Información adicional -->
+            <section>
+                <h4 class="bg-dark  text-white p-2 rounded">Información Adicional</h4>
+                <div class="list-group list-group-flush">
+                    <div class="list-group-item">
+                        <strong>Forma de Pago:</strong> Tarjeta de crédito
+                    </div>
+                    <div class="list-group-item">
+                        <strong>Observaciones:</strong> Gracias por su compra
+                    </div>
+                    <div class="list-group-item">
+                        <strong>Página web:</strong> www.dagaoffice.com
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
-
-    <!-- Datos combinados de empresa y cliente -->
-    <section>
-        <h2>Datos de la Empresa y Cliente</h2>
-        <table class="tabla-empresa-cliente">
-            <tr>
-                <td>
-                    <strong>Datos de la Empresa</strong><br />
-                    <p>
-                        <strong>Nombre:</strong> Empresa DAFA OFFICE<br />
-                        <strong>Dirección:</strong> Calle Principal 123, Ciudad<br />
-                        <strong>RUC:</strong> 1234567890<br />
-                        <strong>Contacto:</strong> +593 987654321
-                    </p>
-                </td>
-                <td>
-                    <strong>Datos del Cliente</strong><br />
-                    <p>
-                        <strong>Nombre:</strong> Juan Pérez<br />
-                        <strong>Cédula/RUC:</strong> 0987654321<br />
-                        <strong>Dirección:</strong> Av. Secundaria 456, Ciudad<br />
-                        <strong>Contacto:</strong> +593 912345678
-                    </p>
-                </td>
-            </tr>
-        </table>
-    </section>
-
-    <!-- Listado de productos -->
-    <section>
-        <h2>Listado de Productos</h2>
-        <table class="tabla-productos">
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Imagen</th>
-                    <th>Descripción</th>
-                    <th>Cantidad</th>
-                    <th>Precio Unitario</th>
-                    <th>Subtotal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>001</td>
-                    <td>
-                        <img src="C:\Users\ASUSPC\Documents\APLICACIONES WEB\Creación de una Factura\imagenes\archivadormetalico.webp" alt="Producto A" class="producto-img" width="50" />
-                    </td>
-                    <td>Archivador Metalico</td>
-                    <td>2</td>
-                    <td>50.00</td>
-                    <td>100.00</td>
-                </tr>
-                <tr>
-                    <td>002</td>
-                    <td>
-                        <img src="C:\Users\ASUSPC\Documents\APLICACIONES WEB\Creación de una Factura\imagenes\sumadoraelectrica.jpg" alt="Producto B" class="producto-img" width="50" />
-                    </td>
-                    <td>Sumadora Electrica</td>
-                    <td>1</td>
-                    <td>80.00</td>
-                    <td>80.00</td>
-                </tr>
-                <tr>
-                    <td>003</td>
-                    <td>
-                        <img src="C:\Users\ASUSPC\Documents\APLICACIONES WEB\Creación de una Factura\imagenes\organizadordeescritorio.webp" alt="Producto C" class="producto-img" width="50"  />
-                    </td>
-                    <td>Organizador De Escritorio</td>
-                    <td>3</td>
-                    <td>30.00</td>
-                    <td>90.00</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="5" class="text-right"><strong>Subtotal:</strong></td>
-                    <td>270.00</td>
-                </tr>
-                <tr>
-                    <td colspan="5" class="text-right"><strong>IVA (12%):</strong></td>
-                    <td>32.40</td>
-                </tr>
-                <tr>
-                    <td colspan="5" class="text-right"><strong>Descuento (10%):</strong></td>
-                    <td>-27.00</td>
-                </tr>
-                <tr>
-                    <td colspan="5" class="text-right"><strong>Total:</strong></td>
-                    <td>275.40</td>
-                </tr>
-            </tfoot>
-        </table>
-    </section>
-
-    <!-- Información adicional -->
-    <section>
-        <h2>Información Adicional</h2>
-        <table class="tabla-adicional">
-            <tr>
-                <td><strong>Forma de Pago:</strong> Tarjeta de crédito</td>
-            </tr>
-            <tr>
-                <td><strong>Observaciones:</strong> Gracias por su compra</td>
-            </tr>
-            <tr>
-                <td><strong>Página web:</strong> www.dagaoffice.com</td>
-            </tr>
-        </table>
-    </section>
 </div>
+
+<!-- Bootstrap 5 JS (opcional, para componentes interactivos) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
